@@ -56,7 +56,7 @@ function megaFriend(friendList) {
         return "please provide some name";
     }
 
-    for (i = 0; i < friendList.length; i++) {   
+    for (i = 0; i < friendList.length; i++) {
 
         if (friendList[i].length > megaName.length) { // checking condition for finding the meganame
             megaName = friendList[i] // assign the mega Name in the meganame variable
