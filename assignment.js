@@ -23,4 +23,28 @@ function budgetCalculator(totalWatch, totalPhone, totalLaptop) {
     return total; // returning total prize
 }
 
+function hotelCost(day) {
+    var totalCost = 0;
+
+    if(day < 0) { // checking if the day is negative or not
+        return "day can't be negative";
+    }else if(day <= 10) {
+        totalCost = day * 100;
+    } else if(day <= 20) {
+        var firstPartCost = 10 * 100;
+        var remaining = day - 10;
+        var secondPartCost = remaining * 80;
+        totalCost = (firstPartCost + secondPartCost);
+    } else {
+        var firstPartCost = 10 * 100;
+        var secondPartCost = 10 * 80;
+        var remaining = day - 20;
+        var thirdPartCost = remaining * 50;
+        totalCost = (firstPartCost + secondPartCost + thirdPartCost);
+    }
+
+    return totalCost;
+}
+
+console.log(hotelCost(-1));
 
