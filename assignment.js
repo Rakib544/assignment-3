@@ -26,25 +26,41 @@ function budgetCalculator(totalWatch, totalPhone, totalLaptop) {
 function hotelCost(day) {
     var totalCost = 0;
 
-    if(day < 0) { // checking if the day is negative or not
+    if (day < 0) { // checking if the day is negative or not
         return "day can't be negative";
-    }else if(day <= 10) {
-        totalCost = day * 100;
-    } else if(day <= 20) {
+    } else if (day <= 10) {
+        totalCost = day * 100; // calculating total cost
+    } else if (day <= 20) {
         var firstPartCost = 10 * 100;
-        var remaining = day - 10;
+        var remaining = day - 10; // calculating second part days
         var secondPartCost = remaining * 80;
-        totalCost = (firstPartCost + secondPartCost);
+        totalCost = (firstPartCost + secondPartCost); //calculating total cost
     } else {
         var firstPartCost = 10 * 100;
         var secondPartCost = 10 * 80;
-        var remaining = day - 20;
-        var thirdPartCost = remaining * 50;
-        totalCost = (firstPartCost + secondPartCost + thirdPartCost);
+        var remaining = day - 20; // calculating third part days
+        var thirdPartCost = remaining * 50; // calculating third part cost
+        totalCost = (firstPartCost + secondPartCost + thirdPartCost); // calculating total cost
     }
 
-    return totalCost;
+    return totalCost; // returning total cost value
 }
 
-console.log(hotelCost(-1));
+
+function megaFriend(friendList) {
+    var megaName = friendList[0];
+
+    if (friendList.length == 0) { // checking if the friendList array is empty or not
+        return "please provide some name";
+    }
+
+    for (i = 0; i < friendList.length; i++) {   
+
+        if (friendList[i].length > megaName.length) { // checking condition for finding the meganame
+            megaName = friendList[i] // assign the mega Name in the meganame variable
+        }
+    }
+
+    return megaName; //returning mega friend name
+}
 
